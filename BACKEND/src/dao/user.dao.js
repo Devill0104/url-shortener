@@ -18,6 +18,8 @@ export const findUserByEmailAndPassword = async (email, password) => {
     return user
 }
 export const getAllUserUrlsDao = async (id) =>{
+    console.log("dao wla fn")
     const data =  await shortUrl.find(id)
+    console.log("dao me mila data", data)
     return data
 }
