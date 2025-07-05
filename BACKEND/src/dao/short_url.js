@@ -13,6 +13,7 @@ export const  saveShortUrl = async (shortUrl, longUrl, userId)=>{
             newUrl.user = userId
         }
         await newUrl.save()
+        return newUrl
     } catch(err) {
         if(err.code == 11000) {
             throw new ConflictError("short url already exists")
