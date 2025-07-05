@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@tanstack/react-router": "^1.124.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
