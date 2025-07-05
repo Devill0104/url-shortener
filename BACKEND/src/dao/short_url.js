@@ -12,7 +12,11 @@ export const  saveShortUrl = async (shortUrl, longUrl, userId)=>{
         if(userId) {
             newUrl.user = userId
         }
+        console.log("shorturl in dao", shortUrl)
+        console.log("logn Url in dao", longUrl)
+        console.log("newUrl in dao", newUrl)
         await newUrl.save()
+        console.log("newUrl saved")
         return newUrl
     } catch(err) {
         if(err.code == 11000) {
