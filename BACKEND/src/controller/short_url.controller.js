@@ -35,7 +35,7 @@ export const redirectFromShortUrl = wrapAsync(
         const {id} = req.params;
         console.log("short url", id)
         const url = await getShortUrl(id)
-        console.log("urls is", url)
+        console.log("urls is(back foundUrl", url)
         url.clicks += 1;
         await url.save();
         console.log("saved and returned to shorurl controller")

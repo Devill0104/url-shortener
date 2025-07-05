@@ -27,7 +27,9 @@ export const  saveShortUrl = async (shortUrl, longUrl, userId)=>{
     
 }
 export const getShortUrl = async (shortUrl)=>{
-    return await shortUrlSchema.findOne({short_url: shortUrl})
+    const foundUrl =  await shortUrlSchema.findOne({short_url: shortUrl})
+    console.log("found url from short url", foundUrl) 
+    return foundUrl
 }
 
 export const getCustomShortUrl = async (slug)=>{
