@@ -19,6 +19,7 @@ export const createShortUrl = wrapAsync(async (req, res)=>{
 export const createShortUrlAuth = wrapAsync(async (req, res)=>{
     const {url,slug} = req.body;
     let shortUrl = null ;
+     console.log('✅ POST /api/create called', req.body, 'user:', req.user);
      if(req.user)
         shortUrl = await createShortUrlWithUser(url, req.user._id,slug);
     else

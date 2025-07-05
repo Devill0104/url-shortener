@@ -16,7 +16,7 @@ const LoginForm = ({ onLogin }) => {
   const navigate = useNavigate()
   const handleSubmit = async () => {
     try{
-        const data = await axiosInstance.post("/api/auth/login", { email, password });
+        const data = await axiosInstance.post("/api/auth/login", { email, password },{ withCredentials: true });
         console.log(data)
         dispatch(login(data.user))
         navigate({to: '/dashboard'})
