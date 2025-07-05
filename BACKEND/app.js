@@ -14,7 +14,7 @@ import cookieParser from 'cookie-parser';
 
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://url-shortener-alpha-olive.vercel.app',
     credentials: true
 }))
 
