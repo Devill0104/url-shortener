@@ -1,6 +1,6 @@
 import axios from 'axios';
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3000', 
+  baseURL: 'https://url-shortener-emz3.onrender.com/', 
   timeout: 10000, 
    withCredentials: true, //this lets cookies saved in the browser
 });
