@@ -31,17 +31,20 @@ export const createShortUrlAuth = wrapAsync(async (req, res)=>{
 
 export const redirectFromShortUrl = wrapAsync(
     async (req,res)=>{
+        console.log("redirectfrom short url")
         const {id} = req.params;
+        console.log("short url", id)
         const url = await getShortUrl(id)
         console.log("urls is", url)
         url.clicks += 1;
         await url.save();
+        console.log("saved and returned to shorurl controller")
         res.redirect(url.full_url)
     }
 )
 
 export const createCustomShortUrl = wrapAsync(async (req, res) => {
     const { url, slug } = req.body;
-    const shortUrl = await createShortUrlService(url, customAlias);
+    const shortUrl = await createShortUrlWithUser(url, req.user._id,customAlias);
     res.status(200).json({ shortUrl: process.env.APP_URL + shortUrl });
 }); 
