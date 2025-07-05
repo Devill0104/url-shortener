@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { getAllUserUrls } from '../api/user.api'
 
 const UserUrl = () => {
-
+  console.log("userurl div me hai")
   const { data: data, isLoading, isError, error } = useQuery({
     queryKey: ['userUrls'],
     queryFn: getAllUserUrls,

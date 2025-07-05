@@ -26,6 +26,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(attachUser)
 
 app.use("/api/auth", auth_routes);
+
 app.use('/api/user', user_routes)
 app.post('/api/create', authMiddleware, createShortUrlAuth)
 // app.post('/api/create',  createShortUrl)
