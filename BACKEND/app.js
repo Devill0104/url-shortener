@@ -40,7 +40,13 @@ app.get('/', (req, res) => {
 
 
 app.use(errorHandler);
-app.listen(3000, ()=>{
-    connectDb();
-    console.log("app is listening")
-})
+const startServer = async () => {
+  await connectDb(); // First connect DB
+
+  const PORT = process.env.PORT || 3000; 
+  app.listen(PORT, () => {
+    console.log(`🚀 Server is listening on port ${PORT}`);
+  });
+};
+
+startServer(); 
