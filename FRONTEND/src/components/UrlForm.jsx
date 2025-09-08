@@ -122,7 +122,7 @@ const UrlForm = ({ onShorten }) => {
   useEffect(() => {
     const wakeServer = async () => {
       try {
-        const res = await fetch('https://your-backend.onrender.com/api/wakeup');
+        const res = await fetch('https://url-shortener-emz3.onrender.com//api/wakeup');
         if (res.ok) {
           setServerUp(true);
         }
