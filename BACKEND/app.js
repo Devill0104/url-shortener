@@ -24,10 +24,16 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(attachUser)
+;
 
 app.use("/api/auth", auth_routes);
 
 app.use('/api/user', user_routes)
+//new code
+app.get('/api/wakeup', (req, res) => {
+  res.json({ status: 'ok', message: 'Server is awake!' });
+})
+//new code ends
 app.post('/api/create', authMiddleware, createShortUrlAuth)
 // app.post('/api/create',  createShortUrl)
 
